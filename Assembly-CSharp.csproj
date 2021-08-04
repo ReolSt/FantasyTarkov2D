@@ -57,18 +57,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SPUM BundlePack Basic\Script\SPUM_Prefabs.cs" />
-    <Compile Include="Assets\Scenes\GUIManager.cs" />
+    <Compile Include="Assets\Scenes\GameScene\GUIManager.cs" />
     <Compile Include="Assets\SPUM BundlePack Basic\Script\SpritePos.cs" />
     <Compile Include="Assets\SPUM BundlePack Basic\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scenes\DebugVariablesDisplayer.cs" />
-    <Compile Include="Assets\Scenes\CharacterMovement.cs" />
+    <Compile Include="Assets\Scenes\GameScene\InventoryListeners.cs" />
+    <Compile Include="Assets\Scenes\GameScene\CharacterMovement.cs" />
     <Compile Include="Assets\SPUM BundlePack Basic\Script\SPUM_SpriteList.cs" />
-    <Compile Include="Assets\Scenes\EntityManager.cs" />
-    <Compile Include="Assets\SPUM BundlePack Basic\Sample\Script\PlayerObj.cs" />
-    <Compile Include="Assets\Scenes\CharacterAnimation.cs" />
+    <Compile Include="Assets\Scenes\GameScene\EntityManager.cs" />
     <Compile Include="Assets\Scenes\DraggableTopBar.cs" />
-    <Compile Include="Assets\Scenes\InventoryListeners.cs" />
-    <Compile Include="Assets\Scenes\PauseMenuListeners.cs" />
+    <Compile Include="Assets\SPUM BundlePack Basic\Sample\Script\PlayerObj.cs" />
+    <Compile Include="Assets\Scenes\GameScene\CharacterAnimation.cs" />
+    <Compile Include="Assets\Scenes\GameScene\PauseMenuListeners.cs" />
+    <Compile Include="Assets\Scenes\PlayerDataLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SPUM BundlePack Basic\ReadMe - 1.0.0.txt" />
