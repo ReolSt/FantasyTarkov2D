@@ -14,16 +14,20 @@ public class CharacterTypeSelector : MonoBehaviour
 
     private GameObject characterTypeObject;
 
+    private GameObject characterPrefabContainer;
+
     private (string group, int lastIndex)[] characterTypes = new (string, int)[]
     {
         ( "Human", 17 ),
         ( "Elf", 4 ),
-        ( "Skeleton" , 6 ),
-        ( "Devil", 4 )
+        ( "Skelton" , 6 ),
+        ( "Devil", 3 )
     };
 
     private int characterTypeIndex = 0;
     private int characterSpriteIndex = 1;
+
+    private DebugVariablesDisplayer debugVariablesDisplayer;
 
     void Start()
     {
@@ -33,15 +37,38 @@ public class CharacterTypeSelector : MonoBehaviour
         this.rightArrowObject = transform.Find("RightArrow").gameObject;
         this.rightArrowButton = this.rightArrowObject.GetComponent<Button>();
 
-        this.characterTypeObject = transform.Find("CharacterTypeObject").gameObject;
+        this.characterTypeObject = transform.Find("Type").gameObject;
+
+        this.characterPrefabContainer = GameObject.Find("CharacterPrefab");
 
         this.leftArrowButton.onClick.AddListener(this.onLeftArrowButtonClick);
         this.rightArrowButton.onClick.AddListener(this.onRightArrowButtonClick);
+
+        this.debugVariablesDisplayer = GameObject.Find("DebugVariablesDisplayer").GetComponent<DebugVariablesDisplayer>();
+
+        UpdateCharacter();
     }
 
     void Update()
     {
         
+    }
+
+    void UpdateCharacter()
+    {
+        foreach (Transform childTransform in this.characterPrefabContainer.transform)
+        {
+            GameObject.Destroy(childTransform.gameObject);
+        }
+
+        GameObject prefab = Instantiate(Resources.Load("SPUM BundlePack Basic/UnitPrefabs/" +
+            this.characterTypes[this.characterTypeIndex].group + "/" + this.characterSpriteIndex) as GameObject);
+
+        prefab.transform.SetParent(this.characterPrefabContainer.transform);
+        prefab.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        prefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+        this.characterTypeObject.GetComponent<Text>().text = this.characterTypes[this.characterTypeIndex].group + " " + this.characterSpriteIndex;
     }
 
     void onLeftArrowButtonClick()
@@ -57,6 +84,8 @@ public class CharacterTypeSelector : MonoBehaviour
 
             this.characterSpriteIndex = this.characterTypes[this.characterTypeIndex].lastIndex;
         }
+
+        UpdateCharacter();
     }
 
     void onRightArrowButtonClick()
@@ -65,7 +94,9 @@ public class CharacterTypeSelector : MonoBehaviour
         if(this.characterSpriteIndex > this.characterTypes[this.characterTypeIndex].lastIndex)
         {
             this.characterTypeIndex = (this.characterTypeIndex + 1) % this.characterTypes.Length;
-            this.characterSpriteIndex = 0;
+            this.characterSpriteIndex = 1;
         }
+
+        UpdateCharacter();
     }
 }
