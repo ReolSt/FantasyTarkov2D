@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class InventoryListeners : MonoBehaviour
 {
     private Button closeButton;
-    void Start()
+    private void Start()
     {
         closeButton = transform.Find("Close").GetComponent<Button>();
         closeButton.onClick.AddListener(OnCloseButtonClick);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
 
-    void OnCloseButtonClick()
+    private void OnCloseButtonClick()
     {
         gameObject.SetActive(false);
     }

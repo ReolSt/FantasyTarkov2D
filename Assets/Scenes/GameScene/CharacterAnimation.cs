@@ -11,14 +11,14 @@ public class CharacterAnimation : MonoBehaviour
     private Animator animator;
     private GUIManager guiManager;
 
-    void Start()
+    private void Start()
     {
         this.animator = GetComponentInChildren<Animator>();
         this.guiManager = GameObject.Find("GUIManager").GetComponent<GUIManager>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
@@ -58,27 +58,27 @@ public class CharacterAnimation : MonoBehaviour
         }
     }
 
-    void RunStart(bool mirror)
+    private void RunStart(bool mirror)
     {
         this.animator.SetFloat("Run", 1.0f);        
     }
 
-    void SetDirection(float axis)
+    private void SetDirection(float axis)
     {
         characterSpriteObject.transform.rotation = Quaternion.Euler(0.0f, axis > 0.0f ? 180.0f : 0.0f, 0.0f);
     }
 
-    void RunEnd()
+    private void RunEnd()
     {
         this.animator.SetFloat("Run", 0.0f);
     }
 
-    void AttackStart()
+    private void AttackStart()
     {
         this.animator.SetFloat("Attack", 1.0f);
     }
 
-    void AttackEnd()
+    private void AttackEnd()
     {
         this.animator.SetFloat("Attack", 0.0f);
     }

@@ -29,7 +29,7 @@ public class CharacterTypeSelector : MonoBehaviour
 
     private DebugVariablesDisplayer debugVariablesDisplayer;
 
-    void Start()
+    private void Start()
     {
         this.leftArrowObject = transform.Find("LeftArrow").gameObject;
         this.leftArrowButton = this.leftArrowObject.GetComponent<Button>();
@@ -49,12 +49,12 @@ public class CharacterTypeSelector : MonoBehaviour
         UpdateCharacter();
     }
 
-    void Update()
+    private void Update()
     {
         
     }
 
-    void UpdateCharacter()
+    private void UpdateCharacter()
     {
         foreach (Transform childTransform in this.characterPrefabContainer.transform)
         {
@@ -71,7 +71,7 @@ public class CharacterTypeSelector : MonoBehaviour
         this.characterTypeObject.GetComponent<Text>().text = this.characterTypes[this.characterTypeIndex].group + " " + this.characterSpriteIndex;
     }
 
-    void onLeftArrowButtonClick()
+    private void onLeftArrowButtonClick()
     {
         --this.characterSpriteIndex;
         if(this.characterSpriteIndex < 1)
@@ -88,7 +88,7 @@ public class CharacterTypeSelector : MonoBehaviour
         UpdateCharacter();
     }
 
-    void onRightArrowButtonClick()
+    private void onRightArrowButtonClick()
     {
         ++this.characterSpriteIndex;
         if(this.characterSpriteIndex > this.characterTypes[this.characterTypeIndex].lastIndex)

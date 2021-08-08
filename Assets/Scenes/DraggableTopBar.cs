@@ -37,12 +37,12 @@ public class DraggableTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler, I
         
     }
 
-    void Start()
+    private void Start()
     {
 
     }
 
-    void Update()
+    private void Update()
     {
         
     }

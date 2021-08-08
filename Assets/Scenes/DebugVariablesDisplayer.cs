@@ -6,7 +6,7 @@ public class DebugVariablesDisplayer : MonoBehaviour
 {
     private Dictionary<string, string> variables = new Dictionary<string, string>();
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // BOB Do Something!
     }

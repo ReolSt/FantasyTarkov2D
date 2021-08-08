@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private GUIManager guiManager;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         this.animator = GetComponentInChildren<Animator>();
 
@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour
         this.guiManager = GameObject.Find("GUIManager").GetComponent<GUIManager>();
     }
 
-    void Update()
+    private void Update()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
@@ -37,7 +37,7 @@ public class CharacterMovement : MonoBehaviour
             Move(new Vector2(horizontalAxis, verticalAxis), Time.deltaTime);
         }        
     }
-    void Move(Vector2 direction, float deltaTime)
+    private void Move(Vector2 direction, float deltaTime)
     {
         Vector2 movement = new Vector2(moveSpeed * direction.x, moveSpeed * direction.y) * deltaTime;
 

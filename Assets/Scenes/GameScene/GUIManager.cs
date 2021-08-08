@@ -17,7 +17,7 @@ public class GUIManager : MonoBehaviour
 
     public bool actionable = true;
 
-    void Start()
+    private void Start()
     {
         this.mainCamera = GameObject.Find("MainCamera");
         this.mainCameraComponent = this.mainCamera.GetComponent<Camera>();
@@ -38,7 +38,7 @@ public class GUIManager : MonoBehaviour
         this.inventory.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
         Vector3 playerPosition = player.transform.position;
