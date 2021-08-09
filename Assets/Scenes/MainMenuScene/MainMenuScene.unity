@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 23912901}
   - component: {fileID: 23912900}
   m_Layer: 5
-  m_Name: Row (4)
+  m_Name: Row4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2507,7 +2507,7 @@ GameObject:
   - component: {fileID: 208164407}
   - component: {fileID: 208164406}
   m_Layer: 5
-  m_Name: Row (2)
+  m_Name: Row2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,7 +3870,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05785701cbec674449be26ada754e811, type: 3}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4371,7 +4371,7 @@ GameObject:
   - component: {fileID: 443757769}
   - component: {fileID: 443757768}
   m_Layer: 5
-  m_Name: Row (3)
+  m_Name: Row3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4934,7 +4934,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05785701cbec674449be26ada754e811, type: 3}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -8362,7 +8362,7 @@ GameObject:
   - component: {fileID: 1027414732}
   - component: {fileID: 1027414731}
   m_Layer: 5
-  m_Name: Row (1)
+  m_Name: Row1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9421,7 +9421,7 @@ GameObject:
   - component: {fileID: 1135246664}
   - component: {fileID: 1135246663}
   m_Layer: 5
-  m_Name: Row
+  m_Name: Row0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10945,7 +10945,7 @@ GameObject:
   - component: {fileID: 1322047229}
   - component: {fileID: 1322047228}
   m_Layer: 5
-  m_Name: Row (5)
+  m_Name: Row5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11986,7 +11986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 0.19607843}
+  m_Color: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12415,7 +12415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 0.19607843}
+  m_Color: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13978,7 +13978,7 @@ GameObject:
   - component: {fileID: 1687718745}
   - component: {fileID: 1687718744}
   m_Layer: 5
-  m_Name: Status
+  m_Name: StatusPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14182,7 +14182,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05785701cbec674449be26ada754e811, type: 3}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -16350,7 +16350,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05785701cbec674449be26ada754e811, type: 3}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -17116,7 +17116,7 @@ GameObject:
   - component: {fileID: 2064606397}
   - component: {fileID: 2064606396}
   m_Layer: 5
-  m_Name: Row (6)
+  m_Name: Row6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
