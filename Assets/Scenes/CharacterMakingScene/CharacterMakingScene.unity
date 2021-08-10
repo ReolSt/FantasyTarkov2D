@@ -4728,6 +4728,7 @@ GameObject:
   - component: {fileID: 1251153588}
   - component: {fileID: 1251153587}
   - component: {fileID: 1251153586}
+  - component: {fileID: 1251153590}
   - component: {fileID: 1251153589}
   m_Layer: 5
   m_Name: Selector
@@ -4832,6 +4833,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 752c0abb5362f024885ab257f228a6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1251153590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251153584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6afdd16ac9e554ba8227d5702fa6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1254649855

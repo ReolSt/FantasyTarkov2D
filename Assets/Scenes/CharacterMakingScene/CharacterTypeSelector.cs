@@ -27,6 +27,8 @@ public class CharacterTypeSelector : MonoBehaviour
     private int characterTypeIndex = 0;
     private int characterSpriteIndex = 1;
 
+    private CharacterPrefabLoader characterPrefabLoader;
+
     private DebugVariablesDisplayer debugVariablesDisplayer;
 
     private void Start()
@@ -43,6 +45,8 @@ public class CharacterTypeSelector : MonoBehaviour
 
         this.leftArrowButton.onClick.AddListener(this.onLeftArrowButtonClick);
         this.rightArrowButton.onClick.AddListener(this.onRightArrowButtonClick);
+
+        this.characterPrefabLoader = gameObject.GetComponent<CharacterPrefabLoader>();
 
         this.debugVariablesDisplayer = GameObject.Find("DebugVariablesDisplayer").GetComponent<DebugVariablesDisplayer>();
 
@@ -61,8 +65,7 @@ public class CharacterTypeSelector : MonoBehaviour
             GameObject.Destroy(childTransform.gameObject);
         }
 
-        GameObject prefab = Instantiate(Resources.Load("SPUM BundlePack Basic/UnitPrefabs/" +
-            this.characterTypes[this.characterTypeIndex].group + "/" + this.characterSpriteIndex) as GameObject);
+        GameObject prefab = characterPrefabLoader.Load(this.characterTypes[this.characterTypeIndex].group, this.characterSpriteIndex);
 
         prefab.transform.SetParent(this.characterPrefabContainer.transform);
         prefab.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
