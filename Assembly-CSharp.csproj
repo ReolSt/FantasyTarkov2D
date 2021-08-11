@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scenes\CharacterMakingScene\CharacterTypeSelector.cs" />
     <Compile Include="Assets\Resources\SPUM BundlePack Basic\Script\SPUM_Prefabs.cs" />
     <Compile Include="Assets\Scenes\GameScene\GUIManager.cs" />
+    <Compile Include="Assets\Scenes\CharacterSeletScene\CharacterLoader.cs" />
     <Compile Include="Assets\Resources\SPUM BundlePack Basic\Script\SpritePos.cs" />
     <Compile Include="Assets\Resources\SPUM BundlePack Basic\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Library\Core\DebugVariablesDisplayer.cs" />
@@ -71,10 +72,10 @@
     <Compile Include="Assets\Library\UI\DraggableTopBar.cs" />
     <Compile Include="Assets\Resources\SPUM BundlePack Basic\Sample\Script\PlayerObj.cs" />
     <Compile Include="Assets\Scenes\GameScene\CharacterAnimation.cs" />
+    <Compile Include="Assets\Library\Graphics\CharacterPrefabLoader.cs" />
     <Compile Include="Assets\Library\Graphics\SpriteMaskInteractionSetter.cs" />
     <Compile Include="Assets\Scenes\GameScene\PauseMenuListeners.cs" />
-    <Compile Include="Assets\Scenes\CharacterSeletScene\CharacterLoader.cs" />
-    <Compile Include="Assets\Library\Graphics\CharacterPrefabLoader.cs" />
+    <Compile Include="Assets\Scenes\CharacterMakingScene\CharacterCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\SPUM BundlePack Basic\ReadMe - 1.0.0.txt" />
