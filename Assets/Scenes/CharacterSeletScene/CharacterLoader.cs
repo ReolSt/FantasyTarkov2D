@@ -16,7 +16,7 @@ public class CharacterLoader : MonoBehaviour
     CharacterPrefabLoader characterPrefabLoader;
     DatabaseAccess databaseAccess;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         this.slotSample = this.slotContainer.transform.Find("SlotSample").gameObject;
 
@@ -32,7 +32,7 @@ public class CharacterLoader : MonoBehaviour
         Destroy(slotSample);
     }
 
-    void OnRead(IDataReader reader)
+    private void OnRead(IDataReader reader)
     {
         Debug.Log(reader.ToString());
         int id = reader.GetInt32(0);
@@ -73,7 +73,7 @@ public class CharacterLoader : MonoBehaviour
         ++this.slotIndex;
     }
 
-    void Update()
+    private void Update()
     {
         
     }

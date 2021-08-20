@@ -10,14 +10,14 @@ class StatusAllocator
     public GameObject leftArrow;
     public GameObject rightArrow;
 
-    public GameObject remainingPointDisplay;
-    private Text remainingPointDisplayComponent;
+    private Text remainingPointsDisplay;
 
     private List<GameObject> LEDs = new List<GameObject>();
 
     public int maxPoint;
     private int currentPoint = 0;
-    public StatusAllocator(GameObject allocatorObject, GameObject remainingPointDisplay, int maxPoint)
+
+    public StatusAllocator(GameObject allocatorObject, Text remainingPointsDisplay, int maxPoint)
     {
         this.allocatorObject = allocatorObject;
         this.maxPoint = maxPoint;
@@ -25,8 +25,7 @@ class StatusAllocator
         this.leftArrow = this.allocatorObject.transform.Find("LeftArrow").gameObject;
         this.rightArrow = this.allocatorObject.transform.Find("RightArrow").gameObject;
 
-        this.remainingPointDisplay = remainingPointDisplay;
-        this.remainingPointDisplayComponent = this.remainingPointDisplay.GetComponent<Text>();
+        this.remainingPointsDisplay = remainingPointsDisplay;
 
         for (int i = 1; i <= this.maxPoint; ++i)
         {
@@ -37,10 +36,20 @@ class StatusAllocator
         this.rightArrow.GetComponent<Button>().onClick.AddListener(Increase);
     }
 
+    public int GetCurrentPoint()
+    {
+        return this.currentPoint;
+    }
+
+    public int GetMaxPoint()
+    {
+        return this.maxPoint;
+    }
+
     public void Increase()
     {
-        int currentRemainingPoint = Int32.Parse(this.remainingPointDisplayComponent.text);
-        if(currentRemainingPoint == 0)
+        int currentRemainingPoints = Int32.Parse(this.remainingPointsDisplay.text);
+        if(currentRemainingPoints == 0)
         {
             return;
         }
@@ -58,7 +67,7 @@ class StatusAllocator
 
         LEDImage.color = activeColor;
 
-        this.remainingPointDisplayComponent.text = (Int32.Parse(this.remainingPointDisplayComponent.text) - 1).ToString();
+        this.remainingPointsDisplay.text = (Int32.Parse(this.remainingPointsDisplay.text) - 1).ToString();
     }
 
     public void Decrease()
@@ -76,7 +85,7 @@ class StatusAllocator
 
         --this.currentPoint;
 
-        this.remainingPointDisplayComponent.text = (Int32.Parse(this.remainingPointDisplayComponent.text) + 1).ToString();
+        this.remainingPointsDisplay.text = (Int32.Parse(this.remainingPointsDisplay.text) + 1).ToString();
     }
 }
 
@@ -88,7 +97,7 @@ public class StatusPointAllocator : MonoBehaviour
 
     public string[] statusNames;
 
-    private GameObject remainingPoints;
+    private Text remainingPointsDisplay;
 
     private Dictionary<string, StatusAllocator> statusAllocators = new Dictionary<string, StatusAllocator>();
 
@@ -96,12 +105,12 @@ public class StatusPointAllocator : MonoBehaviour
 
     private void Start()
     {
-        this.remainingPoints = GameObject.Find("RemainingPoints").gameObject;
-        this.remainingPoints.GetComponent<Text>().text = allocatableStatusPoint.ToString();
+        this.remainingPointsDisplay = GameObject.Find("RemainingPoints").GetComponent<Text>();
+        this.remainingPointsDisplay.text = allocatableStatusPoint.ToString();
 
         foreach (string statusName in statusNames)
         {
-            statusAllocators.Add(statusName, new StatusAllocator(GetAllocatorObject(statusName), this.remainingPoints, this.maxStatusPoint));
+            statusAllocators.Add(statusName, new StatusAllocator(GetAllocatorObject(statusName), this.remainingPointsDisplay, this.maxStatusPoint));
         }
 
         this.debugVariablesDisplayer = GameObject.Find("DebugVariablesDisplayer").GetComponent<DebugVariablesDisplayer>();
@@ -111,6 +120,16 @@ public class StatusPointAllocator : MonoBehaviour
     {
         GameObject allocatorContainer = GameObject.Find(name);
         return allocatorContainer.transform.Find("Allocator").gameObject;
+    }
+
+    public int GetRemainingPoint()
+    {
+        return Int32.Parse(this.remainingPointsDisplay.text);
+    }
+
+    public int GetCurrentPoint(string statusName)
+    {
+        return this.statusAllocators[statusName].GetCurrentPoint();
     }
 
     private void Update()

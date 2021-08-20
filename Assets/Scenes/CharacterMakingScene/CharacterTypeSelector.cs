@@ -39,7 +39,7 @@ public class CharacterTypeSelector : MonoBehaviour
         this.rightArrowObject = transform.Find("RightArrow").gameObject;
         this.rightArrowButton = this.rightArrowObject.GetComponent<Button>();
 
-        this.characterTypeObject = transform.Find("Type").gameObject;
+        this.characterTypeObject = transform.Find("Value").gameObject;
 
         this.characterPrefabContainer = GameObject.Find("CharacterPrefab");
 
@@ -101,5 +101,15 @@ public class CharacterTypeSelector : MonoBehaviour
         }
 
         UpdateCharacter();
+    }
+
+    public string GetPrefabGroup()
+    {
+        return this.characterTypes[this.characterTypeIndex].group;
+    }
+
+    public int GetPrefabIndex()
+    {
+        return this.characterSpriteIndex;
     }
 }

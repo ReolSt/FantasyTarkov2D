@@ -11,7 +11,7 @@ public class PauseMenuListeners : MonoBehaviour
     private Button settingsButton;
     private Button quitButton;
 
-   private  void Start()
+   private void Start()
     {
         guiManager = GameObject.Find("GUIManager").GetComponent<GUIManager>();
 
