@@ -71,11 +71,12 @@
     <Compile Include="Assets\Scenes\GameScene\EntityManager.cs" />
     <Compile Include="Assets\Library\UI\DraggableTopBar.cs" />
     <Compile Include="Assets\Resources\SPUM BundlePack Basic\Sample\Script\PlayerObj.cs" />
+    <Compile Include="Assets\Scenes\CharacterMakingScene\CharacterCreator.cs" />
     <Compile Include="Assets\Scenes\GameScene\CharacterAnimation.cs" />
     <Compile Include="Assets\Library\Graphics\CharacterPrefabLoader.cs" />
     <Compile Include="Assets\Library\Graphics\SpriteMaskInteractionSetter.cs" />
     <Compile Include="Assets\Scenes\GameScene\PauseMenuListeners.cs" />
-    <Compile Include="Assets\Scenes\CharacterMakingScene\CharacterCreator.cs" />
+    <Compile Include="Assets\Scenes\CharacterSeletScene\PlayerSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\SPUM BundlePack Basic\ReadMe - 1.0.0.txt" />

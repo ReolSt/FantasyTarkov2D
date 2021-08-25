@@ -26,8 +26,8 @@ public class CharacterCreator : MonoBehaviour
 
         databaseAccess = GameObject.Find("DatabaseAccess").GetComponent<DatabaseAccess>();
 
-        confirmButton.onClick.AddListener(this.OnConfirmButtonClick);
-        backButton.onClick.AddListener(this.OnBackButtonClick);
+        confirmButton.onClick.AddListener(OnConfirmButtonClick);
+        backButton.onClick.AddListener(LoadSelectScene);
     }
 
     private void Update()
@@ -72,15 +72,10 @@ public class CharacterCreator : MonoBehaviour
         queryParameters = queryParameters.TrimEnd(',');
         query += queryParameters + ")";
 
-        this.databaseAccess.NonQuery(query, OnCreateFinished);
+        this.databaseAccess.NonQuery(query, LoadSelectScene);
     }
 
-    private void OnBackButtonClick()
-    {
-        SceneManager.LoadScene("CharacterSelectScene");
-    }
-
-    private void OnCreateFinished()
+    private void LoadSelectScene()
     {
         SceneManager.LoadScene("CharacterSelectScene");
     }
